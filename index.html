@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vinyl Cult — Лампи, Годинники, Декор</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <nav class="menu">
+            <div class="logo">Vinyl Cult</div>
+            <ul class="nav-list">
+                <li><a href="#lamps">Лампи</a></li>
+                <li><a href="#watches">Годинники</a></li>
+                <li><a href="#shelf">Стелаж</a></li>
+                <li><a href="#stickers">Наліпки</a></li>
+                <li class="dropdown">
+                    <a href="#">Лінійки</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#vinyl">VinylCult</a></li>
+                        <li><a href="#cyber">CyberCult</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="hero">
+            <h1>Вітаємо в Vinyl Cult</h1>
+            <p>Мінімальний декор для аудіофілів: вініл, неон, ретро.</p>
+            <a href="https://www.instagram.com/vinyl_cult" target="_blank" class="insta-link">Переглянути в Instagram</a>
+        </section>
+
+        <!-- Категорії: динамічно генеруються з data.js -->
+        <div id="products-container"></div>
+
+        <!-- Слайдери для демо (тільки для ламп/годинників) -->
+        <section id="demo-sliders" class="hidden">
+            <h2>Демо: Налаштуй свій продукт</h2>
+            <div class="slider-group">
+                <label>Яскравість лампи: <input type="range" id="brightness" min="0.5" max="2" step="0.1" value="1"></label>
+                <img id="lamp-demo" src="https://via.placeholder.com/300x300?text=Лампа" alt="Демо лампи" class="demo-img">
+            </div>
+            <div class="slider-group">
+                <label>Час для годинника: <input type="range" id="time" min="0" max="12" step="1" value="12"></label>
+                <div id="watch-demo" class="watch-demo">
+                    <div class="hand hour"></div>
+                    <div class="hand minute"></div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Vinyl Cult. <a href="https://www.instagram.com/vinyl_cult" target="_blank">Instagram</a></p>
+    </footer>
+
+    <!-- Модалка для замовлення -->
+    <div id="order-modal" class="modal hidden">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Замовити</h2>
+            <form id="order-form">
+                <input type="text" placeholder="Ім'я" required>
+                <input type="email" placeholder="Email" required>
+                <textarea placeholder="Повідомлення (продукт, кількість)"></textarea>
+                <button type="submit">Надіслати</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="data.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
