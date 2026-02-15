@@ -1,0 +1,71 @@
+:root {
+    --bg: #000;
+    --text: #fff;
+    --neon: #00ff88;
+    --accent: #333;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Roboto', sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; }
+
+header { background: var(--accent); padding: 1rem; position: sticky; top: 0; z-index: 10; }
+.menu { display: flex; justify-content: space-between; align-items: center; max-width: 1200px; margin: 0 auto; }
+.logo { font-size: 1.5rem; font-weight: 700; color: var(--neon); }
+.nav-list { display: flex; list-style: none; gap: 2rem; }
+.nav-list a { color: var(--text); text-decoration: none; transition: all 0.3s ease; }
+.nav-list a:hover { color: var(--neon); }
+.dropdown { position: relative; }
+.dropdown-menu { display: none; position: absolute; background: var(--accent); min-width: 150px; box-shadow: 0 8px 16px rgba(0,0,0,0.2); transition: all 0.3s ease; }
+.dropdown:hover .dropdown-menu { display: block; }
+.dropdown-menu li { padding: 0.5rem 1rem; }
+.dropdown-menu a { display: block; }
+
+#hero { text-align: center; padding: 4rem 2rem; background: linear-gradient(to bottom, var(--accent), var(--bg)); }
+#hero h1 { font-size: 3rem; margin-bottom: 1rem; color: var(--neon); }
+.insta-link { color: var(--neon); font-size: 1.2rem; text-decoration: none; transition: all 0.3s ease; }
+.insta-link:hover { text-decoration: underline; }
+
+#products-container { max-width: 1200px; margin: 2rem auto; padding: 0 1rem; display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; }
+.product { background: var(--accent); padding: 1rem; border-radius: 8px; text-align: center; transition: all 0.3s ease; }
+.product:hover { transform: translateY(-5px); box-shadow: 0 10px 20px rgba(0,255,136,0.2); }
+.product img { width: 100%; height: 200px; object-fit: cover; border-radius: 4px; transition: filter 0.3s ease; }
+.product h3 { margin: 1rem 0; color: var(--neon); }
+.product p { margin-bottom: 1rem; }
+.price { font-size: 1.5rem; color: var(--neon); font-weight: bold; }
+.order-btn { background: var(--neon); color: var(--bg); border: none; padding: 0.5rem 1rem; cursor: pointer; transition: all 0.3s ease; border-radius: 4px; }
+.order-btn:hover { background: #00cc66; }
+
+#demo-sliders { padding: 2rem; text-align: center; max-width: 1200px; margin: 2rem auto; }
+.slider-group { margin: 2rem 0; }
+.slider-group input { width: 200px; margin: 1rem; }
+.demo-img { transition: filter 0.3s ease; max-width: 300px; }
+.watch-demo { position: relative; width: 100px; height: 100px; margin: 1rem auto; border: 2px solid var(--neon); border-radius: 50%; }
+.hand { position: absolute; background: var(--neon); transform-origin: bottom center; transition: transform 0.3s ease; }
+.hour { width: 2px; height: 30px; top: 20px; left: 49px; }
+.minute { width: 1px; height: 40px; top: 10px; left: 49.5px; }
+
+.modal { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.8); display: flex; justify-content: center; align-items: center; z-index: 100; transition: opacity 0.3s ease; }
+.modal-content { background: var(--accent); padding: 2rem; border-radius: 8px; max-width: 400px; width: 90%; }
+.close { float: right; font-size: 2rem; cursor: pointer; color: var(--text); }
+form { display: flex; flex-direction: column; gap: 1rem; margin-top: 1rem; }
+input, textarea { padding: 0.5rem; border: 1px solid var(--neon); background: var(--bg); color: var(--text); border-radius: 4px; }
+
+footer { text-align: center; padding: 2rem; background: var(--accent); }
+footer a { color: var(--neon); }
+
+.hidden { display: none; }
+.show { display: block; }
+
+/* Responsive */
+@media (max-width: 768px) {
+    .menu { flex-direction: column; gap: 1rem; }
+    .nav-list { flex-direction: column; gap: 0.5rem; }
+    #hero h1 { font-size: 2rem; }
+    #products-container { grid-template-columns: 1fr; }
+    .dropdown-menu { position: static; display: none; }
+    .dropdown:hover .dropdown-menu { display: none; } /* Мобілка: спрости дропдаун */
+}
+@media (max-width: 480px) {
+    #hero { padding: 2rem 1rem; }
+    .product { padding: 0.5rem; }
+}
