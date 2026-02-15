@@ -3,7 +3,8 @@ const products = [
         id: 1,
         name: 'Вінілова лампа Retro',
         price: '1200 грн',
-        img: 'images/lampa-retro.jpg',          // ← ось так
+        img: 'photo_2026-02-15_16-28-19.jpg
+',          // ← ось так
         desc: 'Неонова лампа у формі платівки. VinylCult.',
         category: 'lamps',
         line: 'vinyl'
